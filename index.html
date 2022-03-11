@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/index.css">
+    <link rel="stylesheet" href="https://use.typekit.net/hgk3kez.css">
+    <title>Workout Plan</title>
+</head>
+
+<body onload="setExercise()">
+    <header>
+        <h1 tabindex="0">7-Minute Workout</h1>
+        <img src="Assets/pictures/jumping-jack.png" tabindex="0" alt="Person doing jumping jacks, page logo">
+    </header>
+
+    <h2 tabindex="0">Workout:</h2>
+    <p tabindex="0">*Rest between each exercise</p>
+    <form>
+        <label tabindex="0" for="length">Total workout length: (minutes)</label>
+        <input tabindex="0" type="number" id="length" name="length" value="7">
+
+        <p tabindex="0">Select all:</p>
+        <label for="selectAll" tabindex="0">All exercises<input id="selectAll" type="checkbox" checked='checked' onclick="setExercise()"></label>
+
+        <p tabindex="0">Exclude selected exercises:</p>
+        <label for="jump" tabindex="0">Jumping exercises<input id="jump" type="checkbox" onclick="setExercise()"></label>
+        <label for="chest" tabindex="0">Chest exercises<input id="chest" type="checkbox" onclick="setExercise()"></label>
+        <label for="back" tabindex="0">Back exercises<input id="back" type="checkbox" onclick="setExercise()"></label>
+        <label for="arms" tabindex="0">Arm exercises<input id="arms" type="checkbox" onclick="setExercise()"></label>
+        <label for="abs" tabindex="0">Ab exercises<input id="abs" type="checkbox" onclick="setExercise()"></label>
+        <label for="legs" tabindex="0">Leg exercises<input id="legs" type="checkbox" onclick="setExercise()"></label>
+    </form>
+
+    <p tabindex="0">Select your exercises manually:</p>
+
+        <button id="startBtn" tabindex="0">Start workout</button>
+
+        <article id="myModal" class="modal">
+
+                <figure class="modal-content">
+                        <nav class="close">&times;</nav>
+                        <h2>Workout</h2>
+                        <h3 id='stepOfStep'>Press start to begin</h3>
+                        <button id="start" type="button" onclick='sessions()'>Start</button>
+                        <button id="pause" type="button" aria-live="polite" onclick="pause()">Pause</button>
+                        <button id="reset" type="button" onclick="warning()">Reset</button>
+
+                        <section id="myProgress">
+                                <h3 tabindex="0">Total workout progress</h3>
+                                <figure id="myBar"></figure>
+                        </section>
+                        
+                        <h3 id='countdown' tabindex="0">Good luck!</h3>
+                        <p id="printHeader" tabindex="0"></p>
+                        <p id='bodyPart' tabindex="0" role="alert"></p>
+                        <p id='exercise' tabindex="0"></p>
+                        <p id='desc' tabindex="0" role="alert"></p>
+
+                </figure>
+
+        </article>
+        <main>
+            <figure><label for='jumping-jack'><input id='jumping-jack' tabindex="0" type="checkbox"
+                    class="legs jump"><img src="Assets/pictures/jumping-jack.png" tabindex="0" alt="Person doing jumping jacks">Jumping jacks</label></figure>
+            <figure><label for='wall-sit'><input id='wall-sit' tabindex="0" type="checkbox"
+                    class="legs"><img src="Assets/pictures/wall-sit.png" tabindex="0" alt="Person sitting against a wall">Wall Sit</label></figure>
+            <figure><label for='push-up'><input id='push-up' tabindex="0" type="checkbox"
+                    class="arms chest"><img src="Assets/pictures/push-up.png" tabindex="0" alt="Person doing push ups">Push ups</label></figure>
+            <figure><label for='crunch'><input id='crunch' tabindex="0" type="checkbox"
+                    class="abs"><img src="Assets/pictures/crunch.png" tabindex="0" alt="Person doing crunches">Crunches</label></figure>
+            <figure><label for='step-up'><input id='step-up' tabindex="0" type="checkbox"
+                    class="legs"><img src="Assets/pictures/step-up.png" tabindex="0" alt="Person doing step-ups">Step Ups</label></figure>
+            <figure><label for='squat'><input id='squat' tabindex="0" type="checkbox"
+                    class="legs abs"><img src="Assets/pictures/squat.png" tabindex="0" alt="Person doing squats">Squats</label></figure>
+            <figure><label for='triceps-dip'><input id='triceps-dip' tabindex="0" type="checkbox"
+                    class="arms"><img src="Assets/pictures/triceps-dip.png" tabindex="0" alt="Person doing triceps-dips">Triceps dips</label></figure>
+            <figure><label for='plank'><input id='plank' tabindex="0" type="checkbox"
+                    class="abs back"><img src="Assets/pictures/plank.png" tabindex="0" alt="Person doing plank">Plank</label></figure>
+            <figure><label for='running'><input id='running' tabindex="0" type="checkbox"
+                    class="legs jump"><img src="Assets/pictures/running.png" tabindex="0" alt="Person running">Running</label></figure>
+            <figure><label for='lunge'><input id='lunge' tabindex="0" type="checkbox"
+                    class="legs abs"><img src="Assets/pictures/lunge.png" tabindex="0" alt="Person doing lunges">Lunges</label></figure>
+            <figure><label for='push-up-rotate'><input id='push-up-rotate' tabindex="0"
+                    type="checkbox" class="arms chest abs"><img src="Assets/pictures/push-up-rotate.png" tabindex="0" alt="Person doing push up rotators">On each side: Push up rotate</label>
+            </figure>
+            <figure><label for='side-plank'><input id='side-plank'  tabindex="0" type="checkbox"
+                    class="abs legs"><img src="Assets/pictures/side-plank.png" tabindex="0" alt="Person doing side plank">On each side: Side plank</label></figure>
+    </main>
+
+    <footer>
+        <h3 tabindex="0">Made by Sherminator Web Developers ©</h3>
+    </footer>
+    <script src="Assets/javascript/functions.js"></script>
+</body>
+</html>
